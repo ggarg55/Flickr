@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Flickr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cqd-J5-ASv">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="iLO-a6-zKo">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCollectionViewCell" id="JeN-jB-c2i" customClass="FlickrCollectionViewCell" customModule="Flickr" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wqC-ZU-cSn">
+                                                    <rect key="frame" x="5" y="5" width="40" height="40"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow_UP" translatesAutoresizingMaskIntoConstraints="NO" id="mis-2H-1k2">
+                                                    <rect key="frame" x="17.5" y="43" width="15" height="10"/>
+                                                    <color key="tintColor" red="0.070588235294117646" green="0.41960784313725491" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="5zy-Bp-K5B"/>
+                                                        <constraint firstAttribute="width" constant="15" id="76U-Am-GVr"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="mis-2H-1k2" firstAttribute="top" secondItem="wqC-ZU-cSn" secondAttribute="bottom" constant="-2" id="21S-cy-mGg"/>
+                                            <constraint firstItem="mis-2H-1k2" firstAttribute="centerX" secondItem="JeN-jB-c2i" secondAttribute="centerX" id="R5D-P4-K9w"/>
+                                            <constraint firstItem="wqC-ZU-cSn" firstAttribute="top" secondItem="JeN-jB-c2i" secondAttribute="top" constant="5" id="ak3-eL-r4O"/>
+                                            <constraint firstAttribute="trailing" secondItem="wqC-ZU-cSn" secondAttribute="trailing" constant="5" id="dZj-Up-Dw2"/>
+                                            <constraint firstItem="wqC-ZU-cSn" firstAttribute="leading" secondItem="JeN-jB-c2i" secondAttribute="leading" constant="5" id="gUA-xL-aqb"/>
+                                            <constraint firstAttribute="bottom" secondItem="mis-2H-1k2" secondAttribute="bottom" constant="-3" id="gnA-g9-ytw"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="arrowImageView" destination="mis-2H-1k2" id="s6J-TF-i3a"/>
+                                            <outlet property="flickrImageView" destination="wqC-ZU-cSn" id="8Ez-4E-nCe"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="201" contentMode="center" reuseIdentifier="FlickrDescriptionCollectionViewCell" id="V1i-US-fdY" customClass="FlickrDescriptionCollectionViewCell" customModule="Flickr" customModuleProvider="target">
+                                        <rect key="frame" x="57.5" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xw2-VI-3oC" customClass="Flickr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Xw2-VI-3oC" secondAttribute="trailing" id="6k1-J2-zeL"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xw2-VI-3oC" secondAttribute="bottom" id="YJn-BD-W5w"/>
+                                            <constraint firstItem="Xw2-VI-3oC" firstAttribute="top" secondItem="V1i-US-fdY" secondAttribute="top" id="hY7-HA-87A"/>
+                                            <constraint firstItem="Xw2-VI-3oC" firstAttribute="leading" secondItem="V1i-US-fdY" secondAttribute="leading" id="tJ0-LJ-53q"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="Xw2-VI-3oC" id="DFY-QN-ta0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="FaZ-g5-P2m"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="kX6-AZ-doA"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cqd-J5-ASv" secondAttribute="bottom" id="8VU-67-eJx"/>
+                            <constraint firstItem="cqd-J5-ASv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="c3f-Av-A6L"/>
+                            <constraint firstItem="cqd-J5-ASv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mof-qx-mqS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cqd-J5-ASv" secondAttribute="trailing" id="wxu-gA-vs5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="flickrCollectionView" destination="cqd-J5-ASv" id="bCm-YS-1Pi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-394.39999999999998" y="14.842578710644679"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Arrow_UP" width="50" height="50"/>
+    </resources>
+</document>
